@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:music_player_ui/constants/colors.dart';
 import 'package:music_player_ui/navbar.dart';
 import 'package:music_player_ui/playerControllers.dart';
+import 'package:music_player_ui/slider.dart';
 
 import 'albumArt.dart';
 
@@ -26,7 +27,6 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  double sliderValue = 2;
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -63,26 +63,7 @@ class _MainPageState extends State<MainPage> {
               color: darkPrimaryColor,
             ),
           ),
-          SliderTheme(
-            data: SliderThemeData(
-              trackHeight: 5,
-              thumbShape: RoundSliderThumbShape(
-                enabledThumbRadius: 5,
-              ),
-            ),
-            child: Slider(
-              value: sliderValue,
-              activeColor: darkPrimaryColor,
-              inactiveColor: darkPrimaryColor.withOpacity(0.3),
-              onChanged: (value) {
-                setState(() {
-                  sliderValue = value;
-                });
-              },
-              min: 0,
-              max: 20,
-            ),
-          ),
+          SliderPlayer(),
           PlayerControllers(),
           SizedBox(
             height: height * 0.05,

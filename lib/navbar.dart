@@ -16,7 +16,7 @@ class NavigationBar extends StatelessWidget {
             'Play Now',
             style: TextStyle(
               color: darkPrimaryColor,
-              fontSize: 16,
+              fontSize: 20,
               fontWeight: FontWeight.w500,
             ),
           ),
